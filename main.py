@@ -1,3 +1,5 @@
+
+
 # ================================
 # PIM II - NotaFlow (Python)
 # Universidade Paulista - UNIP
@@ -104,7 +106,7 @@ class Fila:
         nome_arquivo = f"{disciplina}.txt"
         with open(nome_arquivo, 'w', encoding="utf-8") as arquivo:
             for a in self.fila:
-                arquivo.write(f"Nome: {a['Nome']}, RA: {a['RA']}, Turma: {a['Turma']}, Notas: {a['Notas']}, Média: {a['Média']:.2f}\n")
+                arquivo.write(f"{a['Nome']};{a['RA']};{a['Turma']};{a['Notas']};{a['Média']:.2f}\n")
                 print(f"Salvo em {nome_arquivo} com sucesso!\n")
 
 # ===========================
