@@ -1,5 +1,3 @@
-
-
 # ================================
 # PIM II - NotaFlow (Python)
 # Universidade Paulista - UNIP
@@ -64,7 +62,7 @@ def cadastro(disciplina):
         turma = input("Turma: ").strip()
 
         notas = []
-        for i in range(1, 5):
+        for i in range(1,5):
             nota = float(input(f"Digite a nota {i}: "))
             notas.append(nota)
         
@@ -104,7 +102,7 @@ class Fila:
 
     def salvar(self, disciplina):
         nome_arquivo = f"{disciplina}.txt"
-        with open(nome_arquivo, 'w', encoding="utf-8") as arquivo:
+        with open(nome_arquivo, 'a', encoding="utf-8") as arquivo:
             for a in self.fila:
                 arquivo.write(f"{a['Nome']};{a['RA']};{a['Turma']};{a['Notas']};{a['Média']:.2f}\n")
                 print(f"Salvo em {nome_arquivo} com sucesso!\n")
