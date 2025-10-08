@@ -104,7 +104,8 @@ class Fila:
         nome_arquivo = f"{disciplina}.txt"
         with open(nome_arquivo, 'a', encoding="utf-8") as arquivo:
             for a in self.fila:
-                arquivo.write(f"{a['Nome']};{a['RA']};{a['Turma']};{a['Notas']};{a['Média']:.2f}\n")
+                notas_str = ";".join(str(n) for n in a["Notas"])
+                arquivo.write(f"{a['Nome']};{a['RA']};{a['Turma']};{notas_str};{a['Média']:.2f}\n")
                 print(f"Salvo em {nome_arquivo} com sucesso!\n")
 
 # ===========================
