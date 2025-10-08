@@ -9,13 +9,27 @@ from collections import deque
 # ===========================
 # Menu principal
 # ===========================
+def menu1():
+    while True:
+        print("\n=== NotaFlow ===")
+        print("\nOlá! Você deseja cadastrar um aluno?")
 
-def menu():
+        opc = input("(s/n): ").lower()
+
+        if opc == 'n':
+            print("\nEncerrando o sistema...")
+            break
+        elif menu2() == "sair":
+            break
+        else:
+            menu2()
+
+def menu2():
     discipinas = ["Português", "Matemática", "História", "Filosofia", "Sociologia", "Geografia", "Biologia", "Química", "Física", "Inglês", "Educação Física"]
 
     while True:
         print("\n=== NotaFlow ===")
-        print("Escolha a disciplina para cadastro:")
+        print("\nEscolha a disciplina para cadastro:")
         for i, disc in enumerate(discipinas, start=1):
             print(f"{i}. {disc}")
         print("0. Sair")
@@ -23,8 +37,8 @@ def menu():
         opcao = input("Opção: ")
 
         if opcao == "0":
-            print("\nEncerrando o sistema")
-            break
+            print("\nEncerrando o sistema...")
+            return "sair"
         elif opcao.isdigit() and 1 <= int(opcao) <= len(discipinas):
             disciplina = discipinas[int(opcao) - 1]
             cadastro(disciplina)
@@ -98,4 +112,4 @@ class Fila:
 # ===========================
 
 if __name__ == "__main__":
-    menu()
+    menu1()
